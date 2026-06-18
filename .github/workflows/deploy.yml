@@ -2,7 +2,7 @@ name: Deploy Review Portfolio to GitHub Pages
 
 on:
   push:
-    branches: [main] # 🎯 当 main 分支收到 push 时触发
+    branches: [main]
 
 permissions:
   contents: write
@@ -18,16 +18,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
+      # 🌟 核心修复 1：使用普通 install 允许向下兼容，并强行补装你代码中用到的图标库依赖
       - name: Install Dependencies
-        run: npm ci # 或者用 npm install，但 ci 在 CI/CD 环境下更安全稳定
+        run: |
+          npm install
+          npm install react-icons lucide-react framer-motion
 
+      # 🌟 核心修复 2：执行打包
       - name: Build Project
         run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # 🎯 Vite 默认打包出来的静态文件夹名字
-          branch: gh-pages # 🎯 自动化部署到的目标分支
+          folder: dist
+          branch: gh-pages
