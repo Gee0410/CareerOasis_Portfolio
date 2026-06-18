@@ -1,0 +1,33 @@
+name: Deploy Review Portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [main] # 🎯 当 main 分支收到 push 时触发
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci # 或者用 npm install，但 ci 在 CI/CD 环境下更安全稳定
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # 🎯 Vite 默认打包出来的静态文件夹名字
+          branch: gh-pages # 🎯 自动化部署到的目标分支
