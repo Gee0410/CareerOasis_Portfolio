@@ -4,16 +4,16 @@ import SectionHeading from "./SectionHeading";
 
 const galleryImages = [
   // 📐 1. 核心大海报
-  { src: `${import.meta.env.BASE_URL}assets/poster.png`, label: "Project Poster", isPoster: true, isLeftBonus: false },
+  { src: "/CareerOasis_Portfolio/assets/poster.png", label: "Project Poster", isPoster: true, isLeftBonus: false },
   
   // 📐 2. 放在 Poster 正下方的照片，完美填补左侧剩余空间
-  { src: `${import.meta.env.BASE_URL}assets/booth-3.jpg`, label: "Innovate-IT 2026", isPoster: false, isLeftBonus: true },
+  { src: "/CareerOasis_Portfolio/assets/booth-3.jpg", label: "Innovate-IT 2026", isPoster: false, isLeftBonus: true },
   
   // 📐 3. 右侧的 4 张不规则高度照片
-  { src: `${import.meta.env.BASE_URL}assets/booth-1.jpg`, label: "Exhibition Booth", isPoster: false, isLeftBonus: false },
-  { src: `${import.meta.env.BASE_URL}assets/booth-2.jpg`, label: "Exhibition Booth", isPoster: false, isLeftBonus: false },
-  { src: `${import.meta.env.BASE_URL}assets/nametag.jpg`, label: "Exhibitor Tag", isPoster: false, isLeftBonus: false },
-  { src: `${import.meta.env.BASE_URL}assets/assessor.jpg`, label: "Assessor Presentation", isPoster: false, isLeftBonus: false },
+  { src: "/CareerOasis_Portfolio/assets/booth-1.jpg", label: "Exhibition Booth", isPoster: false, isLeftBonus: false },
+  { src: "/CareerOasis_Portfolio/assets/booth-2.jpg", label: "Exhibition Booth", isPoster: false, isLeftBonus: false },
+  { src: "/CareerOasis_Portfolio/assets/nametag.jpg", label: "Exhibitor Tag", isPoster: false, isLeftBonus: false },
+  { src: "/CareerOasis_Portfolio/assets/assessor.jpg", label: "Assessor Presentation", isPoster: false, isLeftBonus: false },
 ];
 
 export default function Showcase() {
