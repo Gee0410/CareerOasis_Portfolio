@@ -13,15 +13,12 @@ export default function Navbar() {
     <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? "bg-white/80 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,0.06)] py-4" : "bg-transparent py-6"}`}>
       <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
         
-        {/* 🎯 Logo 与字标组合区域 */}
         <a href="#" className="flex items-center gap-2.5 group">
-          {/* 真实系统 Logo 图片 */}
           <img 
             src="assets/CareerOasis.png" 
             alt="CareerOasis Logo" 
             className="h-6 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
-          {/* 品牌专属字标 - 与你原本的 Lovable 风审美 100% 同步 */}
           <span className="font-sans text-xl font-black text-oasis-primary tracking-tighter select-none">
             CareerOasis<span className="text-oasis-accent">.</span>
           </span>

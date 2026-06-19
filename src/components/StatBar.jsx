@@ -26,7 +26,6 @@ export default function StatBar() {
               custom={i}
               variants={fadeUp}
               className="text-center border-gray-100 md:border-r last:border-r-0 md:px-2"            >
-              {/* 这里把数字变小了，更显精致 */}
               <div className="font-sans font-black text-oasis-primary leading-none flex items-baseline justify-center">                <span className="text-3xl md:text-4xl tracking-tight">{num}</span>
                 <span className="text-xl md:text-2xl ml-0.5 text-oasis-accent">{suffix}</span>
               </div>

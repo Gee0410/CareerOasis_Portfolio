@@ -3,13 +3,10 @@ import { FileText } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 
 const galleryImages = [
-  // 📐 1. 核心大海报
   { src: "/CareerOasis_Portfolio/assets/poster.png", label: "Project Poster", isPoster: true, isLeftBonus: false },
   
-  // 📐 2. 放在 Poster 正下方的照片，完美填补左侧剩余空间
   { src: "/CareerOasis_Portfolio/assets/booth-3.jpg", label: "Innovate-IT 2026", isPoster: false, isLeftBonus: true },
   
-  // 📐 3. 右侧的 4 张不规则高度照片
   { src: "/CareerOasis_Portfolio/assets/booth-1.jpg", label: "Exhibition Booth", isPoster: false, isLeftBonus: false },
   { src: "/CareerOasis_Portfolio/assets/booth-2.jpg", label: "Exhibition Booth", isPoster: false, isLeftBonus: false },
   { src: "/CareerOasis_Portfolio/assets/nametag.jpg", label: "Exhibitor Tag", isPoster: false, isLeftBonus: false },
@@ -17,7 +14,6 @@ const galleryImages = [
 ];
 
 export default function Showcase() {
-  // 精确划分照片归属大类
   const posterImg = galleryImages.find(img => img.isPoster);
   const leftBonusImg = galleryImages.find(img => img.isLeftBonus);
   const rightImages = galleryImages.filter(img => !img.isPoster && !img.isLeftBonus);
@@ -32,12 +28,9 @@ export default function Showcase() {
           desc="Glimpses from the final exhibition — booth setup, poster presentations, and live system walkthroughs in front of industry judges."
         />
 
-        {/* 自由高度非对称大布局 */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_2fr] gap-8 w-full items-start">
           
-          {/* 🎯 【左侧独立大栏】：海报 + 额外照片，形成紧凑的垂直链条 */}
           <div className="flex flex-col gap-6 w-full">
-            {/* 海报卡片 */}
             {posterImg && (
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} 
@@ -62,7 +55,6 @@ export default function Showcase() {
               </motion.div>
             )}
 
-            {/* 【新增插槽】完美利用海报下方的多余空间 */}
             {leftBonusImg && (
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} 
@@ -88,7 +80,6 @@ export default function Showcase() {
             )}
           </div>
 
-          {/* 🎯 【右侧专栏】4张照片，保持自由高度瀑布流交错对齐 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
             {rightImages.map((img, idx) => (
               <motion.div 
